@@ -39,13 +39,11 @@ steps:
     gulp package-solution --ship
   displayName: 'Build and package the solution'
 
-# Publish Build Artifacts SPFx sppkg
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/sharepoint/solution/helloworld.sppkg' 
-    artifactName: 'SPFx sppkg' 
-  displayName: 'Publish build SPFx artifacts'
-  # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=vsts
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
 # Publish Test Results to Azure Pipelines
 - task: PublishTestResults@2
