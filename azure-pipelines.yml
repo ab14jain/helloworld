@@ -8,7 +8,7 @@ pool:
 
 # variables
 variables:
-  workingDir: '/'
+  workingDir: ''
 
 steps:
 #install node 10.x
