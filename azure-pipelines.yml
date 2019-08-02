@@ -25,21 +25,6 @@ steps:
     workingDir: '$(workingDir)'
     verbose: false
 
-#start unit tests
-- task: Npm@1
-  displayName: 'npm test'
-  inputs:
-    command: custom
-    customCommand: 'test'
-    workingDir: '$(Build.SourcesDirectory)'
-    verbose: false
-
-# Publish Test Results to Azure Pipelines/TFS
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: 'temp/test/junit/junit.xml'
-    searchFolder: '$(Build.SourcesDirectory)'
-
 
 #bundle code with gulp
 - task: Gulp@0
